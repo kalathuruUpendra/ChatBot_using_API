@@ -1,0 +1,137 @@
+body {
+    background: linear-gradient(135deg, #ddbef3 0%, #c3cfe2 100%);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    perspective: 1000px;
+}
+
+.container {
+    background: rgb(255, 255, 255);
+    width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    padding: 20px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Remove container hover effect */
+.container:hover {
+    transform: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* User message style */
+.user-message {
+    background-color: #bdf6bc;
+    color: rgb(11, 10, 10);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    max-width: 80%;
+    align-self: flex-end; /* ✅ Align right */
+}
+
+.bot-message {
+    background-color: #ccc6c6;
+    color: black;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    max-width: 80%;
+    align-self: flex-start; /* ✅ Align left */
+}
+.user-message, .bot-message {
+    margin-top: 8px;
+}
+
+/* 3D background effect for container */
+.container {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    perspective: 1000px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#chatbox {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background: rgba(255,255,255,0.9);
+    position: relative;
+}
+
+
+#chatbox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff8a00, #e52e71, #1e90ff);
+    border-radius: 8px 8px 0 0;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+#chatbox:hover::before {
+    transform: scaleX(1);
+}
+
+.input-area {
+    display: flex;
+    position: relative;
+}
+
+.input-area::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #007bff, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.input-area:hover::after {
+    opacity: 1;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+}
+
+button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background: #0056b3;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
